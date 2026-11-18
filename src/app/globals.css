@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { background: #0B1522; }
+body {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+  color: #F3F6FA;
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible { outline: 2px solid #4CC38A; outline-offset: 3px; border-radius: 14px; }
+
+@keyframes wave { 0%, 100% { transform: scaleY(0.22); } 50% { transform: scaleY(1); } }
+.bar { transform-origin: center; animation: wave 1.7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bar { animation: none; transform: scaleY(0.6); }
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
