@@ -518,7 +518,7 @@ export default function Survey() {
               <Ar className="mt-1 block">إجاباتك تعاونّا نفهمو شنوة تحتاجو فعلاً ونحضّرو التكوينات الجاية.</Ar>
             </p>
             <ul className="mt-3 flex flex-wrap gap-2 text-[12.5px] text-white/90">
-              <li className="rounded-full border border-white/25 px-3 py-1"><Fr>3 à 4 min</Fr> · <Ar>3 إلى 4 دقايق</Ar></li>
+              <li className="rounded-full border border-white/25 px-3 py-1"><Fr>2 min</Fr> · <Ar>دقيقتين</Ar></li>
               <li className="rounded-full border border-white/25 px-3 py-1"><Fr>Réponses privées</Fr> · <Ar>إجاباتك خاصة</Ar></li>
             </ul>
             <button
