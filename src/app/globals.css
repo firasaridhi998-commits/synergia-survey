@@ -2,18 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
-html, body { background: #0B1522; }
+html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: var(--font-cairo), system-ui, sans-serif;
-  color: #F3F6FA;
+  margin: 0;
+  background: #F3F6F8;
+  color: #14283D;
+  font-family: "Readex Pro Variable", system-ui, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
-:focus-visible { outline: 2px solid #4CC38A; outline-offset: 3px; border-radius: 14px; }
+:focus-visible { outline: 3px solid #1898A0; outline-offset: 3px; border-radius: 16px; }
+/* screen containers are focused by script for screen readers; no visible ring needed */
+[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none; }
+button { font-family: inherit; touch-action: manipulation; }
+input, select { font-family: inherit; font-size: 16px; } /* 16px stops iOS zoom on focus */
 
-@keyframes wave { 0%, 100% { transform: scaleY(0.22); } 50% { transform: scaleY(1); } }
-.bar { transform-origin: center; animation: wave 1.7s ease-in-out infinite; }
+@keyframes screen-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.screen-in { animation: screen-in 240ms ease-out both; }
+
+@keyframes pop { 0% { transform: scale(0.6); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.pop { animation: pop 200ms ease-out both; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.draw-ring { stroke-dasharray: 190; stroke-dashoffset: 190; animation: draw 700ms ease-out 100ms forwards; }
+.draw-check { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw 400ms ease-out 650ms forwards; }
+
+@keyframes bar { 0%, 100% { transform: scaleY(0.25); } 50% { transform: scaleY(1); } }
+.wave-bar { transform-origin: center; animation: bar 1.8s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
-  .bar { animation: none; transform: scaleY(0.6); }
-  * { scroll-behavior: auto !important; transition: none !important; }
+  .screen-in, .pop { animation: none; }
+  .draw-ring, .draw-check { animation: none; stroke-dashoffset: 0; }
+  .wave-bar { animation: none; transform: scaleY(0.6); }
+  * { transition: none !important; scroll-behavior: auto !important; }
 }

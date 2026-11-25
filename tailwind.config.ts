@@ -1,20 +1,22 @@
 import type { Config } from "tailwindcss";
 
+// Palette sampled from the official Synergia logo.
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        navy: "#0B1522",
-        panel: "#131F30",
-        raise: "#1A2A3F",
-        line: "#2A3B52",
-        mist: "#9DB0C6",
-        brand: "#4CC38A",
-        brandInk: "#062A1A",
-        warn: "#FF9B8F",
+        ink: "#14283D",
+        deep: "#0E1E2E",
+        teal: "#1898A0",
+        tealDeep: "#184450",
+        orange: "#DC842C",
+        paper: "#F3F6F8",
+        line: "#D3DEE5",
+        slate: "#52677A",
+        warn: "#B3261E",
       },
-      fontFamily: { sans: ["var(--font-cairo)", "system-ui", "sans-serif"] },
+      fontFamily: { sans: ['"Readex Pro Variable"', "system-ui", "sans-serif"] },
     },
   },
   plugins: [],

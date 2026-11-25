@@ -1,4 +1,4 @@
-# صوت الميكانيكي — Synergia Automotive Survey
+# صوت الميكانيكي · La Voix du Mécanicien — Synergia Automotive Survey
 
 Mobile-first Arabic (RTL) survey. Next.js on Vercel. Answers go to a private Google Sheet through a Google Apps Script.
 The existing WordPress site is never touched. This project only uses the sub-domain `survey.synergia-business.com`.
@@ -98,3 +98,23 @@ copy .env.example to .env.local and fill both values
 npm run dev
 ```
 Open http://localhost:3000.
+
+
+---
+
+## Redesign notes (bilingual FR + Tunisian Arabic edition)
+
+The backend is unchanged: `src/app/api/submit/route.ts`, `src/lib/schema.ts`, `src/lib/questions.ts` (stored values) and `apps-script/Code.gs` are the same as before, so your Google Sheet columns and the existing Apps Script deployment keep working. Only the interface changed.
+
+**One new dependency:** `@fontsource-variable/readex-pro` (the font, self-hosted, so nothing is loaded from Google Fonts). Run `npm install` locally, or just upload the new `package.json` and `package-lock.json`: Vercel installs it by itself.
+
+**Where things are**
+
+- `src/lib/bilingual.ts`: every French and Tunisian Arabic text the respondent sees (questions, answer options, hints, buttons, error messages). Each answer is stored in the sheet exactly as before (the Arabic value in `questions.ts`), whatever French wording is shown.
+- `src/components/Survey.tsx`: screens, layout, animations, the welcome and thank-you screens, and the privacy notice.
+- `public/brand/`: the two official logos, unmodified (`synergia-logo.png` for light backgrounds, `synergia-logo-white.png` for dark ones).
+- `public/img/`: optimized WebP photos (two sizes each, 617 KB in total for all of them). To change a photo, replace the matching pair of files with the same names and sizes (560 px and 1120 px wide, 16:10 crop; the welcome photo `hero-` is 3:4).
+
+**Editing text:** open `src/lib/bilingual.ts` on GitHub, press the pencil, change only the text inside the quotes, then commit. To add or change an answer option, change it in `questions.ts` AND add its French/Arabic pair in `bilingual.ts` (if a pair is missing, the raw value is shown on both lines). Changing a stored value in `questions.ts` splits your counts in the sheet between old and new wording, so avoid it once answers are coming in.
+
+**Which photo is where:** welcome `3.jpeg`; profile screen `IMG_20260629_194839`; difficulties `2.jpeg`; training interests `8.jpeg`; format `IMG_20260906_131107`; expectations `IMG_20260912_173955`; thank-you screen `1790355088546`. Not used: `IMG-20261121-WA0008`, `WA0010`, `WA0027`, `IMG-20261122-WA0006`, `IMG_20260912_164851` and `IMG_20260927_152748`. They are near-duplicates of the gearbox shots, or show identifiable people (certificate groups, trainees); only use those if everyone pictured agreed to appear.

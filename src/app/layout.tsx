@@ -1,29 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Cairo } from "next/font/google";
+import "@fontsource-variable/readex-pro";
 import "./globals.css";
 
-const cairo = Cairo({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-  variable: "--font-cairo",
-});
-
 export const metadata: Metadata = {
-  title: "صوت الميكانيكي | Synergia",
-  description: "خلّي صوتك يساهم في تكوينات Synergia الجاية.",
+  title: "La Voix du Mécanicien | صوت الميكانيكي — Synergia",
+  description:
+    "Faites entendre votre voix pour les prochaines formations Synergia. خلّي صوتك يساهم في تكوينات Synergia الجاية.",
   robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0B1522",
+  viewportFit: "cover",
+  themeColor: "#14283D",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" className={cairo.variable}>
+    <html lang="fr" dir="ltr">
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
