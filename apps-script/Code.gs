@@ -31,7 +31,7 @@ var COLUMNS = [
   ["Preferred Hours", "hours", "Q8. Multiple choice, separated by ' | '."],
   ["Preferred Duration", "duration", "Q9. Single choice."],
   ["Preferred Format", "format", "Q10. Single choice."],
-  ["Budget", "budget", "Q11. Single choice (DT = Tunisian dinar)."],
+  ["Budget (retired)", "budget", "Retired question: no longer asked. Old rows keep their answer, new rows leave this cell empty."],
   ["Payment Responsibility", "payer", "Q12. Single choice."],
   ["Registration Intent", "intent", "Q13. Single choice."],
   ["Registration Barriers", "barriers", "Q14. Multiple choice, separated by ' | '."],
@@ -133,7 +133,7 @@ function doPost(e) {
 /* ---------- Helpers ---------- */
 
 var REQUIRED = ["submissionId", "role", "experience", "governorate", "challenges", "interests", "primary",
-  "days", "hours", "duration", "format", "budget", "payer", "intent", "barriers", "expectations", "distance", "consent"];
+  "days", "hours", "duration", "format", "payer", "intent", "barriers", "expectations", "distance", "consent"];
 var MAX_LEN = { challengeOther: 200, name: 80, phone: 30 };
 
 function validate_(row) {
