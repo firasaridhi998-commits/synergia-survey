@@ -8,7 +8,7 @@ You are a market-research analyst helping Synergia Business Solutions (an automo
 
 I attached an Excel export of the survey "صوت الميكانيكي". The sheet "Responses" has one row per respondent. The sheet "Data Dictionary" explains each column. Answers are in Tunisian Arabic with French technical terms. Multiple-choice answers are joined with " | ". Keep the Arabic and French labels exactly as they are in the data.
 
-Columns: Submission ID, Timestamp, Acquisition Source, Campaign, Professional Role, Experience, Governorate, Professional Challenges, Other Challenge, Training Interests, Primary Training Interest, Preferred Days, Preferred Hours, Preferred Duration, Preferred Format, Budget, Payment Responsibility, Registration Intent, Registration Barriers, Training Expectations, Travel Distance, Name, Phone, Contact Consent.
+Columns: Submission ID, Timestamp, Acquisition Source, Campaign, Professional Role, Experience, Governorate, Professional Challenges, Other Challenge, Training Interests, Primary Training Interest, Preferred Days, Preferred Hours, Preferred Duration, Preferred Format, Budget (retired), Payment Responsibility, Registration Intent, Registration Barriers, Training Expectations, Travel Distance, Name, Phone, Contact Consent.
 
 Do this in order:
 
@@ -20,7 +20,7 @@ Do this in order:
 
 4. Demand per course. For each training subject: how many selected it, how many chose it as the Primary Training Interest, and the average rank. Cross it with role, experience and governorate.
 
-5. Price and intent. Budget distribution overall and per Primary Training Interest. Registration Intent overall. Then focus on the "hot" group: Registration Intent = "أكيد نحب نسجّل" or "ممكن نسجّل". For this group give the budget distribution and the median budget band, and who pays (Payment Responsibility). Suggest a price range per course and show how many respondents it would reach.
+5. Price and intent. The column "Budget (retired)" is only filled in the earliest responses; it is empty for newer ones because that question is no longer asked. Analyse it only on the rows that have a value, say how many that is, and never treat empty cells as an answer. For those rows give the budget distribution overall and per Primary Training Interest. For all rows give Registration Intent overall, then focus on the "hot" group: Registration Intent = "أكيد نحب نسجّل" or "ممكن نسجّل", with who pays (Payment Responsibility). Suggest a price range per course only if the budget data is large enough (30 rows or more); otherwise say that more price data is needed.
 
 6. Schedule and format. Best days, hours, duration and format, overall and for the hot group. Propose a concrete schedule for the first session of the top course.
 

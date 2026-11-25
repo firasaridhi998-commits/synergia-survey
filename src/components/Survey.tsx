@@ -258,7 +258,7 @@ export default function Survey() {
       case "primary": return a.primary && a.interests.includes(a.primary) ? null : ERR.pick;
       case "time": return a.days.length && a.hours.length ? null : ERR.both;
       case "format": return a.duration && a.format ? null : ERR.both;
-      case "money": return a.budget && a.payer ? null : ERR.both;
+      case "money": return a.payer ? null : ERR.pick;
       case "intent": return a.intent ? null : ERR.pick;
       case "barriers": return a.barriers.length ? null : ERR.atLeastOne;
       case "expect": return a.expectations.length ? null : ERR.atLeastOne;
@@ -384,7 +384,6 @@ export default function Survey() {
         </>);
       case "money":
         return (<>
-          <QBlock q={Q.budget}><Choice options={OPTIONS.budget} value={a.budget} onChange={pick("budget")} /></QBlock>
           <QBlock q={Q.payer}><Choice options={OPTIONS.payer} value={a.payer} onChange={pick("payer")} /></QBlock>
         </>);
       case "intent":

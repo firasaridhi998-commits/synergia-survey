@@ -77,7 +77,7 @@ This adds one new DNS record. It does not change any existing record, so WordPre
 
 ## Behaviour to know
 
-- 13 screens for 19 questions. Q6 only appears if Q5 has two or more choices (with one choice it is filled automatically).
+- 13 screens for 18 questions (the budget question was removed; its sheet column is kept and renamed "Budget (retired)" so column positions never shift). Q6 only appears if Q5 has two or more choices (with one choice it is filled automatically).
 - Q4 and Q15 allow 3 choices maximum. Q7 "Flexible" and Q14 "ما عنديش مانع" clear the other choices.
 - Q7, Q8 and Q14 allow several choices because the brief did not set a limit.
 - Name and phone are optional. Q19 defaults to "No" if left empty. Phone is checked only if filled (8 to 15 digits, Arabic digits accepted).

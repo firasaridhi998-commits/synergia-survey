@@ -15,7 +15,6 @@ export const OPTIONS = {
   hours: ["الصباح (08:00–12:00)", "بعد الظهر (13:00–17:00)", "العشية (17:00–20:00)"],
   duration: ["نهار واحد", "يومين", "3–5 أيام", "حصص موزعة على عدة أسابيع"],
   format: ["تطبيق عملي على سيارات حقيقية", "Théorie + Pratique", "Bootcamp مكثّف"],
-  budget: ["أقل من 200 DT", "200–300 DT", "301–400 DT", "401–500 DT", "أكثر من 500 DT"],
   payer: ["أنا", "Garage / الشركة", "نتقاسموا المصاريف", "مازلت ما قررتش"],
   intent: ["أكيد نحب نسجّل", "ممكن نسجّل", "نحب نعرف تفاصيل أكثر", "موش مهتم حالياً"],
   barriers: ["الخدمة ما تخلّينيش نفرغ", "الأسعار غالية", "المركز بعيد عليّا", "ما نجمش نسكّر الـ Garage", "التكوين نظري برشة", "صعوبة إيجاد تكوين باهي", "ما عنديش مانع"],
@@ -40,7 +39,6 @@ export const TEXT = {
   hours: "شنوة التوقيت اللي يناسبك؟",
   duration: "قدّاش تحب تكون مدة التكوين؟",
   format: "كيفاش تحب يكون التكوين؟",
-  budget: "قدّاش تنجم تستثمر في تكوين باهي فيه تطبيق عملي؟",
   payer: "شكون يخلّص مصاريف التكوين؟",
   intent: "كان التكوين اللي تحب عليه متوفّر بالسعر والتوقيت المناسبين، قداش احتمال تسجّل؟",
   barriers: "شنوة أكثر حاجة تمنعك باش تعمل تكوين؟",
@@ -63,7 +61,6 @@ export type Answers = {
   hours: string[];
   duration: string;
   format: string;
-  budget: string;
   payer: string;
   intent: string;
   barriers: string[];
@@ -77,6 +74,6 @@ export type Answers = {
 export const EMPTY_ANSWERS: Answers = {
   role: "", experience: "", governorate: "", challenges: [], challengeOther: "",
   interests: [], primary: "", days: [], hours: [], duration: "", format: "",
-  budget: "", payer: "", intent: "", barriers: [], expectations: [],
+  payer: "", intent: "", barriers: [], expectations: [],
   distance: "", name: "", phone: "", consent: "",
 };
