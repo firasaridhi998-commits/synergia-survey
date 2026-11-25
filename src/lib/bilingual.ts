@@ -9,7 +9,7 @@ export const Q: Record<string, Bi> = {
   role: { fr: "Quel est votre métier ?", ar: "شنوة خدمتك؟" },
   experience: { fr: "Depuis combien de temps travaillez-vous dans le domaine ?", ar: "قدّاش عندك تخدم في المجال؟" },
   governorate: { fr: "Dans quel gouvernorat travaillez-vous ?", ar: "في أنهي ولاية تخدم؟" },
-  challenges: { fr: "Quelles sont vos plus grandes difficultés au quotidien ?", ar: "شنوة أكثر حاجات تقلقك في خدمتك اليومية؟" },
+  challenges: { fr: "Quelles sont les pannes qui vous dérengent le plus et que vous refusez ?", ar: "شنية أكثر حاجة تقلق منها كي تجيك للقاراج و ما تحبش تقبلها ؟" },
   interests: { fr: "Quelles formations aimeriez-vous que Synergia propose ?", ar: "شنوة التكوينات اللي تحب Synergia توفّرهملك؟" },
   primary: { fr: "Parmi vos choix, laquelle aimeriez-vous suivre en priorité ?", ar: "من بين التكوينات اللي اخترتهم، شنوة أكثر تكوين تحب تعملو؟" },
   days: { fr: "Quels jours vous conviennent ?", ar: "شنوة الأيام اللي تناسبك؟" },
